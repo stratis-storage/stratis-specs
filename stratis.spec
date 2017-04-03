@@ -4,12 +4,12 @@ Name:           stratis
 License:        ASL 2.0
 Group:          System Environment/Libraries
 Summary:        A command-line tool for interacting with the Stratis daemon
-Version:        0.0.1
+Version:        0.0.2
 Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/%{oname}/
 Source:         https://github.com/stratis-storage/%{oname}/archive/GIT-TAG/%{oname}-%{version}.tar.gz
 BuildArch:      noarch
-BuildRequires:  python3-devel python3-setuptools
+BuildRequires:  python3-devel python3-setuptools asciidoc
 Requires: python3-stratisd-client-dbus
 
 %description
@@ -22,16 +22,26 @@ interacts with stratisd via D-Bus.
 
 %build
 %{__python3} setup.py build
+cd docs
+make
+gzip --stdout %{name}.8 > %{name}.8.gz
 
 %install
 %{__python3} setup.py install --skip-build --root %{buildroot}
+mkdir -p %{buildroot}%{_mandir}/man8/
+install -m 644 docs/%{name}.8.gz %{buildroot}%{_mandir}/man8/
+
 
 %files
 %{python3_sitelib}/*
 %{_bindir}/stratis
+%{_mandir}/man8/%{name}.8.gz
 %doc README.rst
 %license LICENSE
 
 %changelog
-* Tue Mar 14 2017 Andy Grover <agrover@redhat.com> - 0.0.1-1
+* Mon Apr 3 2017 Andy Grover <agrover@redhat.com> - 0.0.2-1
+- New upstream release
+
+* Tue Mar 14 2017 Andy Grover <agrover@redhat.com> - 0.0.1-2
 - Initial packaging
