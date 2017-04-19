@@ -4,7 +4,7 @@ Name:           python3-stratisd-client-dbus
 License:        ASL 2.0
 Group:          System Environment/Libraries
 Summary:        A wrapper for a stratisd D-Bus client
-Version:        0.08
+Version:        0.09
 Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/%{oname}/
 Source:         https://github.com/stratis-storage/%{oname}/archive/GIT-TAG/%{oname}-%{version}.tar.gz
@@ -33,5 +33,8 @@ the client conform to the expected types.
 %license LICENSE
 
 %changelog
+* Wed Apr 19 2017 Andy Grover <agrover@redhat.com> - 0.09-1
+- New upstream version
+
 * Tue Mar 14 2017 Andy Grover <agrover@redhat.com> - 0.08-1
 - Initial packaging
