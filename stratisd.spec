@@ -2,7 +2,7 @@ Name:           stratisd
 License:        MPL 2.0
 Group:          System Environment/Libraries
 Summary:        A daemon that manages a block devices to create filesystems
-Version:        0.0.3
+Version:        0.1.0
 Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/{%name}/
 Source:         https://github.com/stratis-storage/%{name}/archive/GIT-TAG/%{name}-%{version}.tar.gz
@@ -31,6 +31,9 @@ install -m 644 stratisd.conf %{buildroot}/%{_sysconfdir}/dbus-1/system.d/stratis
 %license LICENSE
 
 %changelog
+* Wed Aug 2 2017 Andy Grover <agrover@redhat.com> - 0.1.0-1
+- New upstream release
+
 * Wed Apr 19 2017 Andy Grover <agrover@redhat.com> - 0.0.3-1
 - New upstream release
 - Put stratisd.conf in correct spot since system bus in use now
