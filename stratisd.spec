@@ -19,10 +19,8 @@ A daemon that manages a block devices to create filesystems.
 cargo build --release
 
 %install
-mkdir -p %{buildroot}/%{_bindir}
-install -m 755 target/release/stratisd %{buildroot}/%{_bindir}
-mkdir -p %{buildroot}/%{_sysconfdir}/dbus-1/system.d/
-install -m 644 stratisd.conf %{buildroot}/%{_sysconfdir}/dbus-1/system.d/stratisd.conf
+install -D -m 755 target/release/stratisd %{buildroot}%{_bindir}/stratisd
+install -D -m 644 stratisd.conf %{buildroot}%{_sysconfdir}/dbus-1/system.d/stratisd.conf
 
 %files
 %{_bindir}/stratisd
