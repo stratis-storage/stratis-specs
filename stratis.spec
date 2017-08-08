@@ -24,18 +24,15 @@ interacts with stratisd via D-Bus.
 %{__python3} setup.py build
 cd docs
 make
-gzip --stdout %{name}.8 > %{name}.8.gz
 
 %install
 %{__python3} setup.py install --skip-build --root %{buildroot}
-mkdir -p %{buildroot}%{_mandir}/man8/
-install -m 644 docs/%{name}.8.gz %{buildroot}%{_mandir}/man8/
-
+install -D -m 644 docs/%{name}.8 %{buildroot}%{_mandir}/man8/%{name}.8
 
 %files
 %{python3_sitelib}/*
 %{_bindir}/stratis
-%{_mandir}/man8/%{name}.8.gz
+%{_mandir}/man8/%{name}.8*
 %doc README.rst
 %license LICENSE
 
