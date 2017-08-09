@@ -1,7 +1,7 @@
 Name:           stratisd
 License:        MPL 2.0
 Group:          System Environment/Libraries
-Summary:        A daemon that manages a block devices to create filesystems
+Summary:        A daemon that manages block devices to create filesystems
 Version:        0.1.0
 Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/{%name}/
@@ -10,7 +10,7 @@ BuildRequires:  rust cargo dbus-devel
 #Requires:	dbus-libs
 
 %description
-A daemon that manages a block devices to create filesystems.
+A daemon that manages block devices to create filesystems.
 
 %prep
 %autosetup -n %{name}-%{version}
