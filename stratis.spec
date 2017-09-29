@@ -4,7 +4,7 @@ Name:           stratis
 License:        ASL 2.0
 Group:          System Environment/Libraries
 Summary:        A command-line tool for interacting with the Stratis daemon
-Version:        0.0.2
+Version:        0.0.3
 Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/%{oname}/
 Source:         https://github.com/stratis-storage/%{oname}/archive/GIT-TAG/%{oname}-%{version}.tar.gz
@@ -37,6 +37,9 @@ install -D -m 644 docs/%{name}.8 %{buildroot}%{_mandir}/man8/%{name}.8
 %license LICENSE
 
 %changelog
+* Thu Sep 28 2017 Andy Grover <agrover@redhat.com> - 0.0.3-1
+- New upstream release
+
 * Mon Apr 3 2017 Andy Grover <agrover@redhat.com> - 0.0.2-1
 - New upstream release
 
