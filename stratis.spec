@@ -4,13 +4,13 @@ Name:           stratis
 License:        ASL 2.0
 Group:          System Environment/Libraries
 Summary:        A command-line tool for interacting with the Stratis daemon
-Version:        0.0.3
-Release:        1%{?dist}
+Version:        0.0.4
+Release:        2%{?dist}
 URL:            https://github.com/stratis-storage/%{oname}/
 Source:         https://github.com/stratis-storage/%{oname}/archive/GIT-TAG/%{oname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python3-devel python3-setuptools asciidoc
-Requires: python3-stratisd-client-dbus
+Requires: python3-dbus-client-gen python3-dbus-client-gen-dbus-python stratisd
 
 %description
 stratis provides a command-line interface (CLI) for
@@ -37,6 +37,12 @@ install -D -m 644 docs/%{name}.8 %{buildroot}%{_mandir}/man8/%{name}.8
 %license LICENSE
 
 %changelog
+* Fri Oct 27 2017 Andy Grover <agrover@redhat.com> - 0.0.4-2
+- Add stratisd as a Requires
+
+* Fri Oct 27 2017 Andy Grover <agrover@redhat.com> - 0.0.4-1
+- New upstream release
+
 * Thu Sep 28 2017 Andy Grover <agrover@redhat.com> - 0.0.3-1
 - New upstream release
 

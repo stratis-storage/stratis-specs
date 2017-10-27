@@ -7,7 +7,6 @@ Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/{%name}/
 Source:         https://github.com/stratis-storage/%{name}/archive/GIT-TAG/%{name}-%{version}.tar.gz
 BuildRequires:  rust cargo dbus-devel
-#Requires:	dbus-libs
 
 %description
 A daemon that manages block devices to create filesystems.
