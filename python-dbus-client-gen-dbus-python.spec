@@ -4,8 +4,8 @@ Name:           python3-dbus-client-gen-dbus-python
 License:        ASL 2.0
 Group:          System Environment/Libraries
 Summary:        dbus-client-gen support for dbus-python
-Version:        0.4
-Release:        2%{?dist}
+Version:        0.5
+Release:        1%{?dist}
 URL:            https://github.com/stratis-storage/%{oname}/
 Source:         https://github.com/stratis-storage/%{oname}/archive/GIT-TAG/%{oname}-%{version}.tar.gz
 BuildArch:      noarch
@@ -32,5 +32,8 @@ library.
 %license LICENSE
 
 %changelog
+* Mon Dec 18 2017 Andy Grover <agrover@redhat.com> - 0.5-1
+- New upstream version
+
 * Fri Oct 27 2017 Andy Grover <agrover@redhat.com> - 0.4-2
 - Initial packaging
