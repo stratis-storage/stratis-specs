@@ -1,0 +1,11 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 66d9176..0dfefd7 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -33,3 +33,6 @@ features = ["serde", "v4"]
+ [dev-dependencies]
+ quickcheck = "0.4"
+ loopdev = "0.1.1"
++
++[profile.release]
++debug = true
