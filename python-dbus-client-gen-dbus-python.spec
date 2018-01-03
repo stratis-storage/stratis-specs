@@ -5,12 +5,12 @@ License:        ASL 2.0
 Group:          System Environment/Libraries
 Summary:        dbus-client-gen support for dbus-python
 Version:        0.5
-Release:        1%{?dist}
+Release:        2%{?dist}
 URL:            https://github.com/stratis-storage/%{oname}/
 Source:         https://github.com/stratis-storage/%{oname}/archive/GIT-TAG/%{oname}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  python3-devel python3-setuptools
-Requires:       dbus-python python3-into-dbus-python
+Requires:       python3-dbus python3-into-dbus-python
 
 %description
 This library generates classes and methods useful to a D-Bus client. This
@@ -32,6 +32,9 @@ library.
 %license LICENSE
 
 %changelog
+* Wed Jan 3 2018 Andy Grover <agrover@redhat.com> - 0.5-2
+- Depend on python3-dbus instead of dbus-python
+
 * Mon Dec 18 2017 Andy Grover <agrover@redhat.com> - 0.5-1
 - New upstream version
 
